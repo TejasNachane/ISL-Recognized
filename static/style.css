@@ -1,0 +1,251 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* Header styles */
+header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Main content section with camera and detection result side by side */
+.main-content {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Make the layout responsive */
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column;
+    }
+}
+
+/* Camera container */
+.camera-container {
+    flex: 2;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.camera-placeholder img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.start-button, .stop-button, .reset-button, .save-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.start-button:hover {
+    background-color: #2980b9;
+}
+
+.stop-button {
+    background-color: #e74c3c;
+}
+
+.stop-button:hover {
+    background-color: #c0392b;
+}
+
+.reset-button {
+    background-color: #f39c12;
+}
+
+.reset-button:hover {
+    background-color: #d35400;
+}
+
+.save-button {
+    background-color: #27ae60;
+}
+
+.save-button:hover {
+    background-color: #2ecc71;
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Detection result */
+.detection-result {
+    flex: 1;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.result-display {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Accumulated text container */
+.accumulated-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.accumulated-text {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    min-height: 100px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #dee2e6;
+    word-wrap: break-word;
+    font-size: 1.2rem;
+    white-space: pre-wrap; /* This preserves line breaks */
+    font-family: monospace; /* Makes text more readable */
+    line-height: 1.5; /* Improves readability for multi-line text */
+}
+
+.text-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+/* Info section */
+.info-section {
+    margin-bottom: 2rem;
+}
+
+.instructions {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.instructions ol {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.instructions li {
+    margin-bottom: 0.5rem;
+}
+
+/* Common signs section */
+.common-signs {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.signs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.sign-card {
+    text-align: center;
+}
+
+.sign-image {
+    background-color: #f8f9fa;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.sign-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* Accessibility */
+button:focus {
+    outline: 3px solid #3498db;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}

@@ -1,0 +1,51 @@
+2025-06-14 16:34:02,055 - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-14 16:34:02,058 - WARNING - Error in loading the saved optimizer state. As a result, your model is starting with a freshly initialized optimizer.
+2025-06-14 16:34:02,059 - INFO - Model loaded successfully from models/hand_gesture_classifier.h5
+2025-06-14 16:34:02,067 - INFO - Label encoder loaded with classes: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+2025-06-14 16:34:02,188 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\tejas\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-06-14 16:34:02,189 - INFO - Using writeable comtypes cache directory: 'C:\Users\tejas\AppData\Local\Programs\Python\Python39\lib\site-packages\comtypes\gen'
+2025-06-14 16:34:04,138 - INFO - Starting real-time detection. Controls:
+2025-06-14 16:34:04,138 - INFO -   'q': Quit the application
+2025-06-14 16:34:04,138 - INFO -   'r': Reset recognized text
+2025-06-14 16:34:04,138 - INFO -   's': Save recognized text to file
+2025-06-14 16:34:04,138 - INFO -   'm': Toggle speech on/off
+2025-06-14 16:34:08,207 - ERROR - Speech error: run loop already started
+2025-06-14 16:34:10,607 - ERROR - Speech error: run loop already started
+2025-06-14 16:34:13,207 - ERROR - Speech error: run loop already started
+2025-06-14 16:34:15,612 - ERROR - Speech error: run loop already started
+2025-06-14 16:34:34,141 - ERROR - Speech error: run loop already started
+2025-06-14 16:34:36,544 - ERROR - Speech error: run loop already started
+2025-06-14 16:34:47,252 - ERROR - Speech error: run loop already started
+2025-06-14 16:34:49,970 - ERROR - Speech error: run loop already started
+2025-06-14 16:35:01,300 - ERROR - Speech error: run loop already started
+2025-06-14 16:35:08,606 - INFO - Recognized text has been reset
+2025-06-14 16:35:21,732 - ERROR - Speech error: run loop already started
+2025-06-14 16:35:24,221 - ERROR - Speech error: run loop already started
+2025-06-14 16:35:47,206 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\tejas\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-06-14 16:35:47,211 - INFO - Using writeable comtypes cache directory: 'C:\Users\tejas\AppData\Local\Programs\Python\Python39\lib\site-packages\comtypes\gen'
+2025-06-14 16:35:47,289 - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-14 16:35:47,292 - WARNING - Error in loading the saved optimizer state. As a result, your model is starting with a freshly initialized optimizer.
+2025-06-14 16:35:47,293 - INFO - Model loaded successfully from models/hand_gesture_classifier.h5
+2025-06-14 16:35:47,293 - INFO - Label encoder loaded with classes: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+2025-06-14 16:35:47,328 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-14 16:35:47,328 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-14 16:35:47,348 - INFO -  * Restarting with watchdog (windowsapi)
+2025-06-14 16:35:52,105 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\tejas\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-06-14 16:35:52,106 - INFO - Using writeable comtypes cache directory: 'C:\Users\tejas\AppData\Local\Programs\Python\Python39\lib\site-packages\comtypes\gen'
+2025-06-14 16:35:52,198 - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-06-14 16:35:52,203 - WARNING - Error in loading the saved optimizer state. As a result, your model is starting with a freshly initialized optimizer.
+2025-06-14 16:35:52,204 - INFO - Model loaded successfully from models/hand_gesture_classifier.h5
+2025-06-14 16:35:52,204 - INFO - Label encoder loaded with classes: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+2025-06-14 16:35:52,221 - WARNING -  * Debugger is active!
+2025-06-14 16:35:52,225 - INFO -  * Debugger PIN: 138-590-429
+2025-06-14 16:36:01,983 - INFO - 127.0.0.1 - - [14/Jun/2025 16:36:01] "GET / HTTP/1.1" 200 -
+2025-06-14 16:36:02,317 - INFO - 127.0.0.1 - - [14/Jun/2025 16:36:02] "GET /static/style.css HTTP/1.1" 200 -
+2025-06-14 16:36:02,361 - INFO - 127.0.0.1 - - [14/Jun/2025 16:36:02] "GET /dataset/B/1.jpg HTTP/1.1" 200 -
+2025-06-14 16:36:02,361 - INFO - 127.0.0.1 - - [14/Jun/2025 16:36:02] "GET /dataset/5/1.jpg HTTP/1.1" 200 -
+2025-06-14 16:36:02,362 - INFO - 127.0.0.1 - - [14/Jun/2025 16:36:02] "GET /dataset/A/1.jpg HTTP/1.1" 200 -
+2025-06-14 16:36:02,367 - INFO - 127.0.0.1 - - [14/Jun/2025 16:36:02] "GET /dataset/F/1.jpg HTTP/1.1" 200 -
+2025-06-14 16:36:02,945 - INFO - 127.0.0.1 - - [14/Jun/2025 16:36:02] "GET /video_feed HTTP/1.1" 200 -
+2025-06-14 16:36:03,296 - INFO - 127.0.0.1 - - [14/Jun/2025 16:36:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-14 16:36:14,375 - INFO - 127.0.0.1 - - [14/Jun/2025 16:36:14] "POST /toggle_prediction HTTP/1.1" 200 -
+2025-06-14 16:36:14,687 - INFO - 127.0.0.1 - - [14/Jun/2025 16:36:14] "GET /prediction_stream HTTP/1.1" 200 -

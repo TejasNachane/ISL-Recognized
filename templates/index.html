@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Sign Language Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Indian Sign Language Detection</h1>
+        <p class="subtitle">Learn and detect Indian Sign Language gestures</p>
+    </header>
+
+    <main>
+        <section class="main-content">
+            <div class="camera-container">
+                <div class="camera-placeholder">
+                    <img src="/video_feed" alt="Camera Preview">
+                </div>
+                <div class="controls">
+                    <button id="startButton" class="start-button">Start Detection</button>
+                    <button id="stopButton" class="stop-button" disabled>Stop Detection</button>
+                </div>
+            </div>
+
+            <div class="detection-result">
+                <h2>Detected Sign</h2>
+                <div class="result-display">No sign detected</div>
+                
+                <div class="accumulated-text-container">
+                    <h3>Accumulated Text</h3>
+                    <div class="accumulated-text" id="accumulatedText"></div>
+                    <div class="text-controls">
+                        <button id="resetTextButton" class="reset-button">Reset Text</button>
+                        <button id="saveTextButton" class="save-button">Save Text</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="instructions">
+                <h2>How to Use</h2>
+                <ol>
+                    <li>Click the "Start Detection" button</li>
+                    <li>Allow camera access when prompted</li>
+                    <li>Show your hand sign in front of the camera</li>
+                    <li>The detected sign will appear on the right</li>
+                    <li>Signs will be accumulated into text and spoken aloud</li>
+                    <li>Click "Reset Text" to clear the accumulated text</li>
+                    <li>Click "Save Text" to download the accumulated text</li>
+                    <li>Click "Stop Detection" to pause the predictions</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="common-signs">
+            <h2>Common Signs</h2>
+            <div class="signs-grid">
+                <div class="sign-card">
+                    <div class="sign-image">
+                        <img src="/dataset/5/1.jpg" alt="Sign for 'Digit 5'" alt="Sign for 'Digit 5'">
+                    </div>
+                    <p>Digit 5</p>
+                </div>
+                <div class="sign-card">
+                    <div class="sign-image">
+                        <img src="/dataset/A/1.jpg" alt="Sign for 'Digit 5'" alt="Sign for 'Letter A'">
+                    </div>
+                    <p>Letter A</p>
+                </div>
+                <div class="sign-card">
+                    <div class="sign-image">
+                        <img src="/dataset/B/1.jpg" alt="Sign for 'Digit 5'" alt="Sign for 'Letter B'">
+                    </div>
+                    <p>Letter B</p>
+                </div>
+                <div class="sign-card">
+                    <div class="sign-image">
+                        <img src="/dataset/F/1.jpg" alt="Sign for 'Digit 5'" alt="Sign for 'Letter F'">
+                    </div>
+                    <p>Letter F</p>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Indian Sign Language Detection Project</p>
+    </footer>
+
+    <script>
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
+        const resetTextButton = document.getElementById('resetTextButton');
+        const saveTextButton = document.getElementById('saveTextButton');
+        const resultDisplay = document.querySelector('.result-display');
+        const accumulatedTextDisplay = document.getElementById('accumulatedText');
+        let eventSource = null;
+
+        // Function to connect to the prediction stream
+        function connectToStream() {
+            // Close any existing connection
+            if (eventSource) {
+                eventSource.close();
+            }
+            
+            // Connect to the prediction stream
+            eventSource = new EventSource('/prediction_stream');
+            
+            // Handle incoming prediction events
+            eventSource.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                resultDisplay.textContent = data.prediction;
+                accumulatedTextDisplay.textContent = data.accumulatedText;
+            };
+            
+            // Handle connection errors
+            eventSource.onerror = function() {
+                console.error("EventSource failed. Reconnecting in 5 seconds...");
+                eventSource.close();
+                setTimeout(connectToStream, 5000);
+            };
+        }
+
+        startButton.addEventListener('click', () => {
+            fetch('/toggle_prediction', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ active: true })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                startButton.disabled = true;
+                stopButton.disabled = false;
+                
+                // Connect to the prediction stream
+                connectToStream();
+            });
+        });
+
+        stopButton.addEventListener('click', () => {
+            fetch('/toggle_prediction', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ active: false })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                startButton.disabled = false;
+                stopButton.disabled = true;
+                
+                // Close the prediction stream
+                if (eventSource) {
+                    eventSource.close();
+                    eventSource = null;
+                }
+                
+                resultDisplay.textContent = "Detection paused";
+            });
+        });
+
+        resetTextButton.addEventListener('click', () => {
+            fetch('/reset_text', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                accumulatedTextDisplay.textContent = "";
+            });
+        });
+
+        saveTextButton.addEventListener('click', () => {
+            fetch('/save_text')
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    console.log("Text saved successfully:", data.text);
+                    
+                    // Create a download link for the text
+                    const blob = new Blob([data.text], { type: 'text/plain' });
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = 'recognized_text.txt';
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    
+                    alert("Text saved and downloaded successfully!");
+                } else {
+                    console.error("Error saving text:", data.message);
+                    alert("Error saving text: " + data.message);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
