@@ -1,6 +1,10 @@
 # 🤟 Indian Sign Language (ISL) Recognition System
 
-A comprehensive deep learning-based system for real-time recognition of Indian Sign Language gestures using computer vision and machine learning techniques. This project enables **two-hand gesture detection** for ISL alphabets (A-Z) and numbers (0-9) with high accuracy and real-time performance.
+A comprehensive deep learning-based system for real-time recognition of Indian Sign Language gestures using computer vision and machin## 🖼️ Project Results & Screenshots
+
+### 🤟 Sample ISL Gesture Dataset*Representative samples from our comprehensive ISL dataset showing clear hand gestures in controlled lighting conditions*
+
+## 📊 Dataset InformationOur dataset contains comprehensive ISL gestures captured in various lighting conditions and hand positions:ques. This project enables **two-hand gesture detection** for ISL alphabets (A-Z) and numbers (0-9) with high accuracy and real-time performance.
 
 ## 🎯 Project Overview
 
@@ -32,45 +36,17 @@ This project implements an end-to-end Indian Sign Language recognition system th
 
 ## 🎬 Project Demonstration
 
-### 🚀 Live Demo Results
-Our ISL recognition system demonstrates exceptional performance in real-world scenarios:
+### 🌐 Web Application Interface
+![Web Interface](screenshots/web_interface.png)
+*Modern, responsive web interface for real-time ISL gesture recognition*
 
-#### 🖥️ Web Application Screenshots
-<div align="center">
-  
-**Main Interface**
-![Main Web Interface](screenshots/main_interface.png)
-*Clean, intuitive web interface with live camera feed and control buttons*
+### 🎯 Real-time Detection Demo
+![Detection Demo](screenshots/detection_demo.png)
+*Live gesture detection with confidence scores and prediction results*
 
-**Detection in Action**
-![Real-time Detection](screenshots/detection_in_action.png)
-*Real-time gesture recognition with confidence scores and visual feedback*
-
-**Results Dashboard**
-![Results Dashboard](screenshots/results_dashboard.png)
-*Comprehensive results display with prediction history and accuracy metrics*
-
-</div>
-
-#### 📈 Training Results Visualization
-<div align="center">
-  
-**Training Progress**
-![Training History Graph](models/training_history.png)
-*Training and validation accuracy/loss curves showing model convergence*
-
-**Model Performance Metrics**
-- ✅ **Final Training Accuracy**: 95.8%
-- ✅ **Final Validation Accuracy**: 92.3%
-- ✅ **Training Loss**: 0.142
-- ✅ **Validation Loss**: 0.203
-- ✅ **Training Time**: ~2.5 hours on GPU
-- ✅ **Model Size**: 2.1 MB
-
-</div>
-
-
-*Real-time detection examples showing high-confidence predictions with hand landmark visualization*
+### 📊 Training History & Performance
+![Training History](models/training_history.png)
+*Model training progress showing accuracy and loss curves over epochs*
 
 ## 🏗️ Technology Stack
 
@@ -438,8 +414,12 @@ class HandGestureClassifier:
 ## 📈 Performance Metrics
 
 ### 🎯 Model Performance
-- **Training Accuracy**: ~95%
-- **Validation Accuracy**: ~92%
+- **Training Accuracy**: 95.8%
+- **Validation Accuracy**: 92.3%
+- **Training Loss**: 0.142
+- **Validation Loss**: 0.203
+- **Training Time**: ~2.5 hours on GPU
+- **Model Size**: 2.1 MB
 - **Real-time Performance**: 15-20 FPS
 - **Prediction Latency**: <100ms per frame
 - **Memory Usage**: ~500MB for full pipeline
@@ -501,25 +481,15 @@ We welcome contributions! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👥 Authors
 
 - **Tejas Nachane** - *Project Lead & Development*
-- **N.N. Ghuikar** - *Research & Development*
+- **Rohini Makode** - *Research & Development*
+- **Sakshi Huse** - *Data Collection & Testing*
+- **Tejas Wankhade** - *Model Training & Optimization*
 
-## 🙏 Acknowledgments
-
-- **MediaPipe Team** for excellent hand tracking technology
-- **TensorFlow Team** for the robust deep learning framework
-- **Indian Sign Language Community** for gesture references and validation
-- **OpenCV Community** for computer vision tools
-
-## 📞 Support
-
-For support, email: [your-email@example.com] or create an issue in the GitHub repository.
 
 ---
 
@@ -546,30 +516,3 @@ python predict.py      # Standalone GUI
 # Access web app
 http://localhost:5000
 ```
-
-## 📸 Creating Project Screenshots
-
-To create the screenshots referenced in this README:
-
-1. **Create Screenshots Directory**
-```bash
-mkdir screenshots
-```
-
-2. **Run the Application and Capture Screenshots**
-```bash
-# Start the web application
-python app.py
-
-# Navigate to http://localhost:5000 and take screenshots of:
-# - Main interface (save as screenshots/main_interface.png)
-# - Detection in action (save as screenshots/detection_in_action.png)
-# - Results dashboard (save as screenshots/results_dashboard.png)
-```
-
-3. **Capture Detection Examples**
-- Use the application to detect various gestures
-- Save examples as `screenshots/detection_letter_A.png`, etc.
-
-4. **Training History**
-- The training history plot is automatically saved as `models/training_history.png` during training
