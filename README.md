@@ -69,28 +69,6 @@ Our ISL recognition system demonstrates exceptional performance in real-world sc
 
 </div>
 
-#### 🎯 Detection Performance Examples
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="screenshots/detection_letter_A.png" width="200px" alt="Detecting Letter A"/>
-        <br><b>Letter 'A' Detection</b>
-        <br>Confidence: 96.7%
-      </td>
-      <td align="center">
-        <img src="screenshots/detection_number_5.png" width="200px" alt="Detecting Number 5"/>
-        <br><b>Number '5' Detection</b>
-        <br>Confidence: 94.2%
-      </td>
-      <td align="center">
-        <img src="screenshots/detection_letter_L.png" width="200px" alt="Detecting Letter L"/>
-        <br><b>Letter 'L' Detection</b>
-        <br>Confidence: 98.1%
-      </td>
-    </tr>
-  </table>
-</div>
 
 *Real-time detection examples showing high-confidence predictions with hand landmark visualization*
 
@@ -254,13 +232,7 @@ python predict.py
 
 Our dataset contains comprehensive ISL gestures captured in various lighting conditions and hand positions:
 
-#### 🔢 Number Gestures Sample
-![Number Gestures](dataset/6/466.jpg)
-*Sample images from the dataset showing ISL number gestures 0-9*
 
-#### 🔤 Alphabet Gestures (A-Z)
-![Alphabet Gestures](/dataset/E/318.jpg)
-for more check the "dataset" folder
 
 #### 📷 Dataset Examples
 <div align="center">
